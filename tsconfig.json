@@ -14,7 +14,7 @@
   "include": [
     "src/**/*.ts",
     "tests/**/*.ts",
-    "node_modules/@types/**/index.d.ts"
+    "node_modules/@types/mocha/index.d.ts"
   ],
   "exclude": [
     "node_modules",
