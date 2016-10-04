@@ -8,7 +8,7 @@ import { readFileSync } from "fs";
 
 import formatter from "../src/index";
 
-describe("postcss-colorguard-reporter", () => {
+describe("postcss-colorguard-formatter", () => {
   it("does not work", () => {
     const instance = postcss([
       colorguard(),
@@ -25,7 +25,7 @@ describe("postcss-colorguard-reporter", () => {
     return instance.process(
       readFileSync(`${__dirname}/fixture.css`, "utf8"),
       {
-        from: "fixture.css",
+        from: `${__dirname}/fixture.css`,
         map: { inline: true },
       }
     )
@@ -33,7 +33,7 @@ describe("postcss-colorguard-reporter", () => {
       console.log = log;
       expect(results.join().split("\n")).to.deep.equal([
         `warning: "red" collides with "#f10"`,
-        `/Users/agorbatchev/1/postcss-colorguard-reporter/fixture.css:3:20`,
+        `${__dirname}/fixture.css:3:20`,
         `1 | h1 {`,
         `2 |   color: red;`,
         `3 |   background-color: #f10;`,
