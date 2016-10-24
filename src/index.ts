@@ -4,6 +4,10 @@ export default function colorguardFormatter(input: any): string {
   const results: string[] = [];
 
   for (let message of input.messages) {
+    if (!message.node) {
+      continue;
+    }
+
     const lines = message.node.source.input.css.split(/\n/g);
     const currentLine = lines[message.line - 1];
     const pad = message.line.toString().length;

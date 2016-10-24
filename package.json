@@ -3,10 +3,10 @@
   "version": "1.0.1",
   "scripts": {
     "test": "mocha --opts tests/mocha.opts tests/**/*-test.ts",
-    "build": "rm -rf lib && tsc -p . && rm -fr lib/tests && mv lib/src/** lib/ && rm -fr lib/src",
+    "build": "rm -rf lib && tsc -p . && rm -fr lib/tests",
     "prepublish": "npm run build"
   },
-  "main": "lib/index.js",
+  "main": "lib/src/index.js",
   "typings": "lib/index.d.ts",
   "license": "MIT",
   "files": [
